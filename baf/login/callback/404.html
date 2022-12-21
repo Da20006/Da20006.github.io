@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<link rel="icon" type="image/png" href="/baf/1/Bakaguya.ico"/>
+<html>
+    
+<head>
+    <body bgcolor=”#000000"></body>
+    
+<title>:(</title>
+</head>
+<body>
+
+
+    <p style="text-align:center;"><img src="/baf/1/sad.png" alt="Kaguya is sad :(" style="height:400px;width:auto"></p>
+    <h1 style="text-align:center"><FONT COLOR=white>Bakaguya bre&ccaron;&iacute;, proto&zcaron;e nem&uring;&zcaron;e naj&iacute;t tuto str&aacute;nku :(
+    </FONT></h1>
+    <br>
+    <h6 style="text-align:center"><font color="red" size="1">Bastarde!!!</font></h6>
+    <br><br><font color="white">
+    <h3 id="demo" style="text-align:center"></h3></font>
+
+
+    <script>
+
+        function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+            }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+        }
+        
+        document.getElementById("demo").innerHTML = "Error: " + getCookie("error_sp")
+
+    </script>
+</body>
+</html>

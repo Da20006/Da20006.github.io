@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BAF</title>
+    <link rel="icon" type="image/png" href="/baf/icon.ico"/>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+
+
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function setCookie(cname, cvalue, extime) {
+                const d = new Date();
+                d.setTime(d.getTime() + ((extime-60) * 1000));
+                let expires = "expires="+ d.toUTCString();
+                var cook = cname + "=" + cvalue + ";" + expires + ";path=/";
+                console.log(cname + "=" + cvalue + ";" + expires + ";path=/a/"); 
+                document.cookie = cook;
+                }
+
+
+
+                function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
+
+
+        const token = getCookie("token_spotify");
+        let nameDevices = getCookie("nameDevices");
+        console.log("A: " + token);
+        if (token == "" || token == null) {
+            window.location.href = './login';
+        } else {
+
+        }
+        var pauseSo = true;
+        var positionSo = "0";
+        var durationSo = "0";
+        
+        
+        var imageURLs = [
+             "./1/1.jpg"
+           , "./1/2.jpg"
+           , "./1/3.jpg"
+           , "./1/4.jpg"
+           , "./1/5.jpg"
+           , "./1/7.jpg"
+           , "./1/8.jpg"
+           , "./1/9.jpg"
+           , "./1/10.jpg"
+           , "./1/12.jpg"
+           , "./1/13.jpg"
+           , "./1/14.jpg"
+           , "./1/15.jpg"
+           , "./1/16.jpg"
+           , "./1/17.jpg"
+           , "./1/18.jpg"
+           , "./1/19.jpg"
+           , "./1/20.jpg"
+           , "./1/21.jpg"
+           , "./1/22.jpg"
+           , "./1/23.jpg"
+           , "./1/24.jpg"
+           , "./1/25.jpg"
+           , "./1/26.jpg"
+           , "./1/27.jpg"
+           , "./1/28.jpg"
+           , "./1/29.jpg"
+           , "./1/30.jpg"
+           , "./1/31.jpg"
+           , "./1/32.jpg"
+           , "./1/33.jpg"
+           , "./1/34.jpg"
+           , "./1/35.jpg"
+           , "./1/36.jpg"
+           , "./1/37.jpg"
+           , "./1/38.jpg"
+           , "./1/39.jpg"
+           , "./1/40.jpg"
+           , "./1/41.jpg"
+           , "./1/42.jpg"
+           , "./1/43.jpg"
+           , "./1/44.jpg"
+           , "./1/45.jpg"
+           , "./1/46.jpg"
+           , "./1/47.jpg"
+           , "./1/48.jpg"
+           , "./1/49.jpg"
+           , "./1/50.jpg"
+           , "./1/51.jpg"
+           , "./1/52.jpg"
+           , "./1/53.jpg"
+           , "./1/54.jpg"
+           , "./1/55.jpg"
+           , "./1/56.jpg"
+           , "./1/57.jpg"
+           , "./1/58.jpg"
+           , "./1/59.jpg"
+           , "./1/60.jpg"
+           , "./1/61.jpg"
+           , "./1/62.jpg"
+           , "./1/63.jpg"
+           , "./1/64.jpg"
+           , "./1/65.jpg"
+           , "./1/66.jpg"
+           , "./1/67.jpg"
+           , "./1/68.jpg"
+           , "./1/69.jpg"
+           , "./1/70.jpg"
+           , "./1/71.jpg"
+           , "./1/72.jpg"
+           , "./1/73.jpg"
+           , "./1/74.jpg"
+           , "./1/75.jpg"
+           , "./1/76.jpg"
+           , "./1/77.jpg"
+           , "./1/78.jpg"
+           , "./1/79.jpg"
+           , "./1/80.jpg"
+           , "./1/81.jpg"
+           , "./1/82.jpg"
+           , "./1/83.jpg"
+           , "./1/84.jpg"
+           , "./1/85.jpg"
+           , "./1/86.jpg"
+           , "./1/87.jpg"
+           , "./1/88.jpg"
+           , "./1/89.jpg"
+           , "./1/90.jpg"
+           , "./1/91.jpg"
+           , "./1/92.jpg"
+           , "./1/93.jpg"
+           , "./1/94.jpg"
+           , "./1/95.jpg"
+           , "./1/96.jpg"
+           , "./1/97.jpg"
+           , "./1/98.jpg"
+           , "./1/99.jpg"
+           , "./1/100.jpg"
+           , "./1/101.jpg"
+           , "./1/102.jpg"
+           , "./1/103.jpg"
+           , "./1/104.jpg"
+           , "./1/105.jpg"
+           , "./1/106.jpg"
+           , "./1/107.jpg"
+           , "./1/108.jpg"
+           , "./1/109.jpg"
+           , "./1/110.jpg"
+           , "./1/111.jpg"
+           , "./1/112.jpg"
+           , "./1/113.jpg"
+           , "./1/114.jpg"
+           , "./1/115.jpg"
+           , "./1/116.jpg"
+           , "./1/117.jpg"
+           , "./1/118.jpg"
+           , "./1/119.jpg"
+           , "./1/120.jpg"
+           , "./1/121.jpg"
+           , "./1/122.jpg"
+           , "./1/123.jpg"
+        ];
+        function getImageTag() {
+          var img = '<img class=\"imgR\" src=\"';
+          var randomIndex = Math.floor(Math.random() * imageURLs.length);
+          img += imageURLs[randomIndex];
+          img += '\" alt=\"Nejake random fotky\"/>';
+          return img;
+        }
+
+        
+        
+
+        
+        console.log("NameDevices: " + nameDevices);
+        
+      </script>
+      <style>
+        th, td {
+          
+          border-radius: 20px;
+          text-align: center;
+        }
+        table {
+          margin-left: auto;
+          margin-right: auto;
+          word-wrap: normal;
+          width: 250px;
+          border: 1px solid white;
+          border-radius: 20px;
+        }
+        .cara {
+          text-align: left;
+          height: 15px;
+          width: 230;
+          border-radius: 5px;
+          transition: width 1s;
+          
+        }
+        .caraP {
+          width: 0px;
+        }
+        .imgS {
+          border-radius: 20px;
+          margin-left: 0%; 
+          margin-right: 0%;
+          width: 200px;
+          height: auto;
+        }
+        .imgR {
+          border-radius: 20px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .buttonS{
+          height: 29px;
+          width: 80px;
+          
+        }
+        body {
+          background-color: black;
+        }
+        
+        .a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+.a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+.a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
+        
+</style>
+</head>
+<body><FONT COLOR=white>
+  <div style="text-align: right; float: right;"><a id="secSp"></a><a class="a" href="./login/">Přihlásit se znovu</a><br><a id="NameDe"></a><button id="change_name">Změnit název</button></div>
+  <span style="float: left; font-size: 80px;">BAF</span>
+  
+
+  <h5></h5>
+  <br><br>
+	<dir style="text-align:center; margin-top: 10%;"><table><tr><td><p style="margin-top: 25px;"><img class="imgS" id="obrazekAlba" src="./ready.png"></p>
+    <big><b><p id="jmenoP"></p></b></big>
+    <p id="autorP"></p></td></tr><tr><td><p id="secSong"></p></td></tr><tr><td><img id="cara" class="cara" style="width: 0px;" src="./cara.png"></td></tr></table></dir>
+    <dir style="text-align:center; margin-top: 0%;">
+      <button class="buttonS" style="text-align: right;" id="back">Previouse</button>
+      <button class="buttonS" style="text-align: center;" id="togglePlay">Play/Pause</button>
+      <button class="buttonS" style="text-align: left;" id="next">Next</button>
+      </dir>
+    
+
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script>
+        window.onSpotifyWebPlaybackSDKReady = () => {
+
+
+
+
+          if (nameDevices == "" || nameDevices == null) {
+            document.getElementById("jmenoP").innerHTML = "Prosím čekejte...";
+            sleep(100);
+
+          
+          nameDevices = prompt("Zadejte název zařízení:", "webDaniel");
+          
+          do {
+            if (nameDevices == "" || nameDevices == null) {
+              nameDevices = prompt("ŠPATNÝ FORMÁT\nZadejte název zařízení:", "webDaniel");
+              }
+          } while (nameDevices == "" || nameDevices == null);
+          
+          setCookie("nameDevices", nameDevices, 604860);
+        };
+            
+            const player = new Spotify.Player({
+                name: nameDevices,
+                getOAuthToken: cb => { cb(token); },
+                volume: 0.8
+            });
+
+            document.getElementById("NameDe").innerHTML ="Název zařízení: " + nameDevices + " ";
+            // Ready
+            player.addListener('ready', ({ device_id }) => {
+                console.log('Ready with Device ID', device_id);
+                document.getElementById("jmenoP").innerHTML = "Ready";
+
+                var url = "https://api.spotify.com/v1/me/player";
+                var xhr = new XMLHttpRequest();
+                xhr.open("PUT", url);
+
+                xhr.setRequestHeader("Accept", "application/json");
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("Authorization", "Bearer " + token);
+
+                xhr.onreadystatechange = function () {
+                  if (xhr.readyState === 4) {
+                    console.log(xhr.status);
+                    console.log(xhr.responseText);
+                }};
+
+                var data = '{"device_ids":["' + device_id + '"]}';
+
+                console.log("aa " + data);
+
+                sleep(2000);
+
+                xhr.send(data);
+            });
+            player.activateElement();
+
+            player.addListener('player_state_changed', ({
+             position,
+             duration,
+             track_window: { current_track },
+             disallows: { pausing }
+            }) => {
+              console.log('Currently Playing', current_track);
+              console.log('Position in Song', position);
+              console.log('Duration of Song', duration);
+              console.log('A', pausing);
+               pauseSo = pausing;
+               positionSo = Math.floor(position/1000);
+               durationSo = Math.floor(duration/1000);
+               var pocetautoru = current_track.artists.length;
+               var momentalneautoru = 0;
+               var autori;
+               
+					document.getElementById("jmenoP").innerHTML = current_track.name;
+          //document.getElementById("autorP").innerHTML = current_track.artists[0].name;
+          document.getElementById("obrazekAlba").src= current_track.album.images[2].url;
+
+          do {
+            
+            if (momentalneautoru == 0) {
+              autori = current_track.artists[momentalneautoru].name;
+            } else {
+              autori = autori + ", " + current_track.artists[momentalneautoru].name;
+            }
+            momentalneautoru++;
+          } while (pocetautoru != momentalneautoru);
+          document.getElementById("autorP").innerHTML = autori;
+              
+
+          
+              
+              
+
+            });
+
+            // Not Ready
+            player.addListener('not_ready', ({ device_id }) => {
+                console.log('Device ID has gone offline', device_id);
+                document.getElementById("jmenoP").innerHTML = 'Device ID has gone offline';
+                document.getElementById("obrazekAlba").src = "./error.png";
+            });
+
+
+            player.addListener('initialization_error', ({ message }) => {
+                console.error(message);
+
+document.getElementById("jmenoP").innerHTML = message;
+document.getElementById("obrazekAlba").src = "./error.png";
+
+            });
+
+            player.addListener('authentication_error', ({ message }) => {
+                console.error(message);
+
+document.getElementById("jmenoP").innerHTML = message;
+document.getElementById("obrazekAlba").src = "./error.png";
+            });
+
+            player.addListener('account_error', ({ message }) => {
+                console.error(message);
+
+document.getElementById("jmenoP").innerHTML = message;
+document.getElementById("obrazekAlba").src = "./error.png";
+            });
+
+            document.getElementById('togglePlay').onclick = function() {
+              
+              
+
+              player.togglePlay();
+              
+            };
+
+            document.getElementById('next').onclick = function() {
+            player.nextTrack();
+            };
+
+            document.getElementById('back').onclick = function() {
+            player.previousTrack();
+            };
+
+            player.connect();
+            
+
+            document.getElementById("change_name").onclick = function() {
+           nameDevices2 = prompt("Zadejte nový název zařízení", nameDevices);
+            if ((nameDevices2 == null) || (nameDevices2 == "")) {
+              document.getElementById("NameDe").innerHTML = "Neplatný název, momentálný název zařízení: " + nameDevices + " ";
+            } else {
+              nameDevices = nameDevices2;
+              setCookie("nameDevices", nameDevices, 604860);
+              document.getElementById("NameDe").innerHTML ="Nový název se změní po přenačtení stránky " + nameDevices + " ";
+              if (confirm('Nový název se uložil.\nPro aplikování změn se musí stránka přenačíst.\nChcete ji přenačíst ihned?')) {
+  // Save it!
+  location.reload();
+} else {
+  // Do nothing!
+  
+}
+
+
+
+document.getElementById("musicStart").onclick = function() {
+
+
+  
+}
+
+            }
+          }
+        }
+    </script>
+    <script>
+        var secondsS = Number(getCookie("expiers_spo")) - Number(Math.floor(new Date().getTime()/1000.0));
+        
+        function SecondsSpo() {
+            secondsS -= 1;
+            if (secondsS > 59) {
+              var minutesS = Math.floor(secondsS/60);
+              var secondsS2 = secondsS % 60;
+              document.getElementById('secSp').innerHTML = "Platnost tohodle loginu: " + minutesS + " minut a " + secondsS2 + " sekund. ";
+            } else {
+              document.getElementById('secSp').innerHTML = "Platnost tohodle loginu: " + secondsS + " ";
+            }
+            if (secondsS < 0) {
+                alert("Vypršel časový limit přihlášení, přihlašte se prosím znovu.");
+                window.location.href = "./login";
+            };
+
+        }
+
+        var cancel = setInterval(SecondsSpo, 1000);
+    </script>
+    <script>
+      
+      function SecondsSong() {
+          
+          
+          
+
+          
+
+          if (pauseSo == true) {
+
+          } else {
+            positionSo += 1;
+            
+          }
+          var minutesSo = Math.floor(positionSo/60);
+          var SecondsSo2 = ("0" + (positionSo % 60)).slice(-2); 
+          var delkaMinuteSo = Math.floor(durationSo/60);
+          var delkaSecondsSo = ("0" + (durationSo % 60)).slice(-2);
+          document.getElementById('secSong').innerHTML =  minutesSo + ":" + SecondsSo2 + " / " + delkaMinuteSo + ":" + delkaSecondsSo;
+          var delkaCary = (positionSo/(durationSo/100))*2.3;
+          document.getElementById('cara').style = "width: " + delkaCary + "px;";
+          
+          };
+        var cancel = setInterval(SecondsSong, 1000);
+    </script>
+    <script>
+      
+
+        
+
+    </script>
+    <dir style="text-align:center;"><script type="text/javascript">
+        document.write(getImageTag());
+    </script></dir>
+
+<div style="text-align: right; color: rgb(80, 80, 80);"><a>Verze: V2.4</a></div>
+</body></FONT>
+</html>
+
+
+<!--
+    
+    https://gurayyarar.github.io/AdminBSBMaterialDesign/pages/ui/animations.html
+-->

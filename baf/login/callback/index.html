@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+<title>Callback</title>
+<link rel="shortcut icon" href="/baf/icon.ico">
+</head>
+<body>
+    <h1>Loadaing...</h1>
+    <script>
+
+                function setCookie(cname, cvalue, extime) {
+                const d = new Date();
+                d.setTime(d.getTime() + ((extime-60) * 1000));
+                let expires = "expires="+ d.toUTCString();
+                var cook = cname + "=" + cvalue + ";" + expires + ";path=/";
+                console.log(cname + "=" + cvalue + ";" + expires + ";path=/a/"); 
+                document.cookie = cook;
+                }
+
+            var urll = window.location;
+            var errorsp = 0;
+            var errorsp =  new URLSearchParams(urll.search).get('error');
+            var url = window.location;
+            var access_token = new URLSearchParams(url.hash.substring(1)).get('access_token');
+            console.log("Token: " + access_token);
+            let expires_in = new URLSearchParams(url.hash.substring(1)).get('expires_in');
+            console.log("Time: " + expires_in);
+            var timeNow = Math.floor(new Date().getTime()/1000.0);
+
+            if (access_token != null && access_token !="") {
+                var TimeExpires = Number(timeNow) + Number(expires_in) - 60;
+                console.log(TimeExpires);
+                setCookie("expiers_spo", TimeExpires, expires_in);
+                setCookie("token_spotify", access_token, expires_in);
+                
+                window.location.href = "./../../";
+            } else if (errorsp != null) {
+                setCookie("error_sp", errorsp, 120);
+                window.location.href = "./error.html";
+            } else {
+                window.location.href = "./../";
+            }
+        
+            
+
+            
+        
+            
+        
+        </script>
+
+</body>
+</html>

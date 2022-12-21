@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="shortcut icon" href="/baf/icon.ico">
+</head>
+<body>
+
+<h1>Prihlasovaci okno otevreno</h1>
+</b>
+
+<button id="a">Otevrit okno znovu</button>
+<script>
+    const win = window.open('https://accounts.spotify.com/en/authorize?response_type=token&client_id=9ad58b05a44e451c9ea32e56c5eb7e9c&redirect_uri=http%3A%2F%2F192.168.0.136%2Fbaf%2Flogin%2Fcallback&scope=streaming+user-read-email+user-modify-playback-state+user-read-private&show_dialog=true','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+    
+    win;
+    document.getElementById('a').onclick = function(){
+        win;
+    };
+
+    if (window.closed) {
+        console.log("A");
+    }
+</script>
+
+</body>
+</html>
