@@ -11,9 +11,9 @@
 <h3>Jestli vas prohlizec automaticky nepresmeroval, kliknete na tlacitko nize.</h3>
 <button id="a">Presmerovat ihned</button>
 <script>
-    
+    window.location.href = 'https://accounts.spotify.com/en/authorize?response_type=token&client_id=9ad58b05a44e451c9ea32e56c5eb7e9c&redirect_uri=https%3A%2F%2Fda20006.github.io%2Fbaf%2Flogin%2Fcallback&scope=user-read-playback-state+streaming+user-read-email+user-modify-playback-state+user-read-private&show_dialog=true';
     document.getElementById('a').onclick = function(){
-        window.location.href = 'https://accounts.spotify.com/en/authorize?response_type=token&client_id=9ad58b05a44e451c9ea32e56c5eb7e9c&redirect_uri=https%3A%2F%2F192.168.0.136%2Fbaf%2Flogin%2Fcallback&scope=user-read-playback-state+streaming+user-read-email+user-modify-playback-state+user-read-private&show_dialog=false';
+        window.location.href = 'https://accounts.spotify.com/en/authorize?response_type=token&client_id=9ad58b05a44e451c9ea32e56c5eb7e9c&redirect_uri=https%3A%2F%2Fda20006.github.io%2Fbaf%2Flogin%2Fcallback&scope=user-read-playback-state+streaming+user-read-email+user-modify-playback-state+user-read-private&show_dialog=true';
     };
 
 </script>
