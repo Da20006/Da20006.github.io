@@ -22,31 +22,13 @@
     <div style="text-align:center;"><button id="back">Přihlásit se znova</button></div>
     
 
-
+    <script src="/baf/javascripts/base.js"></script>
     <script>
-        function getCookie(cname) {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for(let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-            }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-        }
-
         if ((getCookie("error_sp") == null) || (getCookie("error_sp") == "")) {
             window.location.href = "./../";
         } else if (getCookie("error_sp") == "access_denied") {
 				document.getElementById("title").innerHTML = "Přístup zamítnut"
-
 				document.getElementById("demo").innerHTML = "Error: Přístup zamítnut";
-
 			} else {
 				document.getElementById("title").innerHTML = getCookie("error_sp");
 				document.getElementById("demo").innerHTML = "Error: " + getCookie("error_sp");
