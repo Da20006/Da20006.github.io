@@ -23,11 +23,11 @@
             if (access_token != null && access_token !="") {
                 var TimeExpires = Number(timeNow) + Number(expires_in) - 60;
                 console.log(TimeExpires);
-                setCookie("expiers_spo", TimeExpires, expires_in);
-                setCookie("token_spotify", access_token, expires_in);
+                setCookie("expiers_spo", TimeExpires, expires_in-60);
+                setCookie("token_spotify", access_token, expires_in-60);
                 window.location.href = "./../../";
             } else if (errorsp != null) {
-                setCookie("error_sp", errorsp, 120);
+                setCookie("error_sp", errorsp, 60);
                 window.location.href = "./error.html";
             } else {
                 window.location.href = "./../";
